@@ -3,6 +3,7 @@
         "xiosbase": "c",
         "xlocale": "c",
         "xstddef": "c",
-        "xutility": "c"
+        "xutility": "c",
+        "xstring": "c"
     }
 }

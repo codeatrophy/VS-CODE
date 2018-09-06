@@ -6,7 +6,6 @@
 // Needed a structure to keep track of string information
 typedef struct charPerm
 {
-
     int len;        // the length of the string if no match then it cant be a permutation
     char *letters;  // keeps track of the letters in the string
     int *frequency; // keeps frequency of the letters in the string
@@ -18,7 +17,6 @@ bool isPermutation(char *firstPerm, char *secondPerm, int lenFirst, int lenSecon
 {
     // def: permutation is simply having same set of characters, but perhaps appear in different order
     // ex: abc, acb, bca, bac are all permutations of each other
-
     if (lenFirst != lenSecond) {
         printf("Permutation cannot be possible since length of the strings are not equal.");
         return false; 
@@ -27,7 +25,6 @@ bool isPermutation(char *firstPerm, char *secondPerm, int lenFirst, int lenSecon
     
     else
     {
-
         for (int i = 0; i < lenFirst; i++)
         {
 
