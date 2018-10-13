@@ -22,13 +22,10 @@ bool isPermutation(char *firstPerm, char *secondPerm, int lenFirst, int lenSecon
         return false; 
     }
 
-    
     else
     {
-
         charPerm A;
         charPerm B;
-
         A.len=lenFirst;
         B.len=lenSecond;
 
