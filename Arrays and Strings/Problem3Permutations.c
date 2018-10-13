@@ -97,8 +97,8 @@ bool isPermutation(char *firstPerm, char *secondPerm, int lenFirst, int lenSecon
 int main()
 {
     // lenFirst here is 6
-    char firstPerm[] = {'c', 'b', 'a', '\0'};
-    char secondPerm[] = {'c', 'a', 'b', '\0'};
+    char firstPerm[] = {'c', 'a', 'a', '\0'};
+    char secondPerm[] = {'b', 'a', 'c', '\0'};
 
     // gives lenFirst of array without explicitly stating the integer!
     int lenFirst = sizeof(firstPerm) / sizeof(char);
