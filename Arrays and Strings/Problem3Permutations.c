@@ -7,7 +7,7 @@
 typedef struct charPerm
 {
     int len;        // the length of the string if no match then it cant be a permutation
-    char *letters;  // keeps track of the letters in the string
+    int *letters;  // keeps track of the letters in the string
     int *frequency; // keeps frequency of the letters in the string
 
 } charPerm;
@@ -22,68 +22,76 @@ bool isPermutation(char *firstPerm, char *secondPerm, int lenFirst, int lenSecon
         return false; 
     }
 
-
-    // sort the characters here somehow, using ascii value
-
-    
-
-
     else
     {
+        printf("checking for perm");
         charPerm A;
         charPerm B;
-        A.len=lenFirst;
-        B.len=lenSecond;
-        A.letters=malloc(lenFirst*(sizeof(char)));
-        A.frequency=malloc(lenFirst*(sizeof(int)));
-        B.letters=malloc(lenSecond*(sizeof(int)));
-        B.frequency=malloc(lenSecond*(sizeof(int)));
+        int count;
+        A.len=lenFirst-1;
+        B.len=lenSecond-1;
+        A.letters=malloc(lenFirst*sizeof(char));
+        A.frequency=malloc(lenFirst*sizeof(int));
+        B.letters=malloc(lenSecond*sizeof(char));
+        B.frequency=malloc(lenSecond*sizeof(int));
 
 
-        for (int i = 0; i < lenFirst; i++) {
-
+        for (int i = 0; i < A.len; i++) {
+            
+            printf("\ncurrent letter in first perm is%c", firstPerm[i]);
         if(firstPerm[i] == 65) {
-            A.letters[i] = 'a';
+            A.letters[0] = 1;
+            
         }
 
         if(firstPerm[i] == 66) {
-            A.letters[i] = 'b';
+            A.letters[1] = 2;
         }
         
         if(firstPerm[i] == 67) {
-            A.letters[i] = 'c';
+            A.letters[2] = 3;
         }
 
-        
-        for (int i = 0; i < lenSecond; i++) {
+
+        }
+        printf("\ndone sorting chars for A");
+
+        for (int i = 0; i < B.len; i++) {
 
         if(secondPerm[i] == 65) {
-            B.letters[i] = 'a';
+            B.letters[0] = 1;
         }
 
         if(secondPerm[i] == 66) {
-            B.letters[i] = 'b';
+            B.letters[1] = 2;
         }
         
         if(secondPerm[i] == 67) {
-            B.letters[i] = 'c';
+            B.letters[2] = 3;
         }
 
-    }
+        }
 
+        printf("\ndone sorting chars for B");
 
-        for (int i = 0; i < lenFirst; i++)
-        {
+        for (int i = 0; i < A.len; i++) {
             if(A.letters[i] == B.letters[i]) {
-                count++
+                printf("\ncharacter for A here is %d", A.letters[i]);
+                printf("\ncharacter for B here is %d", B.letters[i]);
+                count++;
             }
-            if(count == 3) {
-                return true;
-            } else 
-                return false;
         }
-    }
 
+        printf("\ndone counting");
+
+          if(count == 3) {
+                printf("\nits a permutation");
+                return true;
+            } else {
+                printf("\nnot perm");
+                return false;
+            }
+    }
 }
 
 int main()
