@@ -89,7 +89,7 @@ bool isPermutation(char *firstPerm, char *secondPerm, int lenFirst, int lenSecon
                 return true;
             } else {
                 printf("\nnot perm");
-                return false;
+                return fdalse;
             }
     }
 }
