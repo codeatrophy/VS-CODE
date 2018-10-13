@@ -28,21 +28,16 @@ bool isPermutation(char *firstPerm, char *secondPerm, int lenFirst, int lenSecon
         charPerm B;
         A.len=lenFirst;
         B.len=lenSecond;
+        A.letters=malloc(lenFirst*(sizeof(char)));
+        A.frequency=malloc(lenFirst*(sizeof(int)));
+        B.letters=malloc(lenSecond*(sizeof(int)));
+        B.frequency=malloc(lenSecond*(sizeof(int)));
 
         for (int i = 0; i < lenFirst; i++)
         {
             
         }
-    
-    if() {
-
-
-    }
-    else {
-     return true; // its a permutation
-
-    }
-
+         return true; // its a permutation
     }
 
 }
