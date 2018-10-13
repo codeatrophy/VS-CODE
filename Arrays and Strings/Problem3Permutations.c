@@ -25,12 +25,27 @@ bool isPermutation(char *firstPerm, char *secondPerm, int lenFirst, int lenSecon
     
     else
     {
+
+        charPerm A;
+        charPerm B;
+
+        A.len=lenFirst;
+        B.len=lenSecond;
+
         for (int i = 0; i < lenFirst; i++)
         {
-
+            
         }
+    
+    if() {
 
-    return true; // its a permutation
+
+    }
+    else {
+     return true; // its a permutation
+
+    }
+
     }
 
 }
