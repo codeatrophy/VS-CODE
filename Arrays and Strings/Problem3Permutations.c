@@ -22,6 +22,12 @@ bool isPermutation(char *firstPerm, char *secondPerm, int lenFirst, int lenSecon
         return false; 
     }
 
+
+    // sort the characters here somehow, using ascii value
+
+    
+
+
     else
     {
         charPerm A;
@@ -33,11 +39,49 @@ bool isPermutation(char *firstPerm, char *secondPerm, int lenFirst, int lenSecon
         B.letters=malloc(lenSecond*(sizeof(int)));
         B.frequency=malloc(lenSecond*(sizeof(int)));
 
+
+        for (int i = 0; i < lenFirst; i++) {
+
+        if(firstPerm[i] == 65) {
+            A.letters[i] = 'a';
+        }
+
+        if(firstPerm[i] == 66) {
+            A.letters[i] = 'b';
+        }
+        
+        if(firstPerm[i] == 67) {
+            A.letters[i] = 'c';
+        }
+
+        
+        for (int i = 0; i < lenSecond; i++) {
+
+        if(secondPerm[i] == 65) {
+            B.letters[i] = 'a';
+        }
+
+        if(secondPerm[i] == 66) {
+            B.letters[i] = 'b';
+        }
+        
+        if(secondPerm[i] == 67) {
+            B.letters[i] = 'c';
+        }
+
+    }
+
+
         for (int i = 0; i < lenFirst; i++)
         {
-            
+            if(A.letters[i] == B.letters[i]) {
+                count++
+            }
+            if(count == 3) {
+                return true;
+            } else 
+                return false;
         }
-         return true; // its a permutation
     }
 
 }
