@@ -4,7 +4,9 @@
         "xlocale": "c",
         "xstddef": "c",
         "xutility": "c",
-        "xstring": "c"
+        "xstring": "c",
+        "stdbool.h": "c",
+        "string.h": "c"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
