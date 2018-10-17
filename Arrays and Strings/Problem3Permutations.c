@@ -103,6 +103,7 @@ int main()
     // gives lenFirst of array without explicitly stating the integer!
     int lenFirst = sizeof(firstPerm) / sizeof(char);
     int lenSecond = sizeof(secondPerm) / sizeof(char);
+    printf("Lenfirst is: %d and lensecond is: %d",lenFirst,lenSecond);
     // Checks if a string is a permutation of another
     isPermutation(firstPerm, secondPerm, lenFirst, lenSecond);
 
