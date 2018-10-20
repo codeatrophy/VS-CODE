@@ -28,7 +28,7 @@ if(myArray[index] && myArray[index+1] == ' ')
  return shift-2;
 }
 // return the shifted string with in between spaces converted to %20
-// Note each character in %20 recieves it's own individual space
+// Note each character in %20 recieves it's own space
 char * replaceString(char *myArray, int shift, int iter) {
 
 int count = iter;
