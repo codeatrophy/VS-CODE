@@ -33,29 +33,35 @@ char * replaceString(char *myArray, int shift, int iter) {
 
 int count = iter;
 
- for(int i = 0; i < iter; i++) {
-     printf("\nI have: %c",myArray[i]);
- }
+char tempArray[iter];
 
-for(int i = iter; i >= 0 ; i--) {
-     printf("\nwe have %c",myArray[i]);
+char blank[iter];
 
-    if(myArray[i] != ' ') {
-        myArray[count] = myArray[i];
-        count--;
+strncpy(tempArray,myArray,iter);
+
+for(int i = 0; i <= iter; i++) {
+    if(tempArray[i] == ' ') {
+        blank[i] = '%';
+        blank[i+1] = '2';
+        blank[i+2] = '0';
     }
-
 }
-
-
-
-
-    return myArray;
+printf("\nblank is: ");
+for(int i = 0; i < iter; i++) {
+    printf("%c", blank[i]);
+    myArray[i] = ' ';
+}
+ 
+for(int i = 0; i < iter; i++) {
+    myArray[i] = blank[i];
+}
+ 
+ return myArray;
 }
 int main() {
-
+//                           %   2   0      
 char strArray[] = {'M', 'r',' ','J','o','h','n',' ','S','m','i','t','h',' ',' ',' ',' ',' ',' ', '\0'};
-
+// 19 characters
 // holds the const size of the string including null term char
 int iter = 0;
 
@@ -75,9 +81,9 @@ printf("\nThe string will be shifted by a count of: %d", shift);
 
 replaceString(strArray,shift,iter);
 
-printf("\nThe final array is: ");
+printf("\nResult: ");
 for(int i = 0; i < iter; i++) {
-    printf("%c",strArray[i]);
+    printf("\n:%c",strArray[i]);
 }
 
     return 0;
