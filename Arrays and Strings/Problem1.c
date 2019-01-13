@@ -18,7 +18,7 @@ bool isUniqueChar(char *myCharArray, int len)
     for (int j = 0; j < len; j++) {
       printf("Comparing tempChar char %c with the arrray char %c and counter value is %d: \n", tempChar, myCharArray[j], counter);
     // counter increased for dups and only if not equal to the tempChars own index
-      if (tempChar == myCharArray[j] && j != skipIndex) counter++;
+      if (tempChar == myCharArray[j] && j != skipIndex) counter++; //makresurenewoneowkrs
     }
   }
 
