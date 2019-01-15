@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 
-char * replaceString(char *myArray, int len) {
+char * compressedString(char *myArray, int len) {
 
     if(len == 0) {
         printf("String Uncompressable");
@@ -48,7 +48,7 @@ int main() {
     int length = strlen(precompressed); // doesnt include '\0'  
     printf("\nthe length of the char string array is : %d\n", length);
 
-    replaceString(precompressed,length);    
+    compressedString(precompressed,length);    
 
     printf("\n");
     return 0;
