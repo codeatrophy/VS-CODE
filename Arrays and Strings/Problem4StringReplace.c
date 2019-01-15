@@ -4,12 +4,12 @@
 
 char * replaceString(char *myArray, int len) {
 
- char * new=(char *)malloc(len*sizeof(char));
- char * transfer=(char *)malloc(len*sizeof(char));
+ char new[len];
+ char transfer[len];
 
  int repIndex = 0;
 
- for(int i = 0; i < len; i++) {
+ for(int i = 0; i < len-1; i++) {
      new[i] = myArray[i];
      myArray[i] = ' ';
      printf("new is: %c\n",new[i]);
@@ -29,7 +29,7 @@ char * replaceString(char *myArray, int len) {
      }
  }
 
- for(int i = 0; i < len-1; i++) 
+ for(int i = 0; i < len-3; i++) 
      myArray[i] = transfer[i];
 }
 
@@ -47,10 +47,10 @@ while(strArray[len] != '\0'){
 // this is without the null term character
 printf("\nthe length of the array is : %d\n", len);
 
-replaceString(strArray,len-1);
+replaceString(strArray,len);
 
 printf("\nResult: ");
-for(int i = 0; i < len-1; i++) {
+for(int i = 0; i < len-5; i++) {
     printf("%c",strArray[i]);
 }
 
