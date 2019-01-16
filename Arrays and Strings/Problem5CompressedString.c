@@ -32,11 +32,7 @@ char * compressedString(char *myArray, int len) {
 
             }
         }
-        for(int i = 0; i < 4; i++){
-            printf("\n Stored in index %d of counterArray, this count of letters: %d",i, counterArray[i]);
-        }
 
-        
         int tempCounter = 0;
         char compressedCharTemp[len]; //stores letters and numbers
         int finalLength = 8;
@@ -56,21 +52,27 @@ char * compressedString(char *myArray, int len) {
                 tempCounter++;
             }
         }   
-        printf("\ntempArray is: \n");
+        //printf("\nCompressed Array is: \n");
+    
         for(int i = 0; i < finalLength; i++){
-            printf("%c",compressedCharTemp[i]);
+            myArray[i] = compressedCharTemp[i];
         }
     }
 }
 
 int main() {         
 
-    char * precompressed = "aabcccccaaa";
+    char precompressed[] = "aabcccccaaa";
 
     int length = strlen(precompressed); // doesnt include '\0'  
-    printf("\nthe length of the char string array is : %d\n", length);
 
-    compressedString(precompressed,length);    
+    compressedString(precompressed,length);
+
+    printf("\nCompressed Array is: ");
+    for(int i = 0; i < 8; i++){
+
+        printf("%c",precompressed[i]);
+    }
 
     printf("\n");
     return 0;
